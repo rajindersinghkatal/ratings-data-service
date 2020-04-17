@@ -7,7 +7,7 @@ node{
 	 def java_Home =  tool name: 'JAVA_8', type: 'jdk'
      //sh "${mvnHome}/bin/mvn package"
      bat "echo %JAVA_HOME%"
-	 bat "echo ${java_Home}"
+	 bat "set JAVA_HOME=${java_Home}/jre"
      bat "mvn package"
      //bat "mvn clean install"
     } 
