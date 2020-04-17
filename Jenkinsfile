@@ -4,8 +4,10 @@ node{
     }
    stage('Maven Build'){
      def mvnHome = tool name: 'Maven_3_6_0', type: 'maven'
+	 def java_Home =  tool name: 'JAVA_8', type: 'jdk'
      //sh "${mvnHome}/bin/mvn package"
      bat "echo %JAVA_HOME%"
+	 bat "echo ${java_Home}"
      bat "${mvnHome}/bin/mvn package"
      //bat "mvn clean install"
     } 
