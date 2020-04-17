@@ -8,7 +8,7 @@ node{
      //sh "${mvnHome}/bin/mvn package"
      bat "echo %JAVA_HOME%"
 	 bat "echo ${java_Home}"
-     bat "${mvnHome}/bin/mvn package"
+     bat "mvn package"
      //bat "mvn clean install"
     } 
 }
