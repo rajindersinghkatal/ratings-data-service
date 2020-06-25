@@ -1,14 +1,4 @@
-node{
-   stage('SCM Checkout'){
-     git 'https://github.com/rajindersinghkatal/ratings-data-service.git'
-    }
-   stage('Maven Build'){
-     def mvnHome = tool name: 'Maven_3_6_0', type: 'maven'
-	 def java_Home =  tool name: 'JAVA_8', type: 'jdk'
-     //sh "${mvnHome}/bin/mvn package"
-     //bat "set JAVA_HOME=${java_Homjre"
-	 //bat "echo %JAVA_HOME%"
-	 //bat "mvn clean install"
-	 bat "mvn clean install -U"
-    } 
-}
+FROM openjdk:8
+EXPOSE 8080
+ADD target\ratings-data-service-0.0.1-SNAPSHOT.jar ratings-data-service-0.0.1-SNAPSHOT.jar
+ENTRYPOINT ["java","-jar","/ratings-data-service-0.0.1-SNAPSHOT.jar"]
